@@ -102,7 +102,122 @@ let obj={name:"King", isPaid:true, email:"hi@gmail.com"};
 
 hello(obj);
 
+
+
+//Type- Alias
+
+type User={
+    name:String,
+    email:String,
+}
+
+function hello (num:User){
+    return "hi"
+}
+hello ({name:"hi", email:"kar"});
+
+
+//eg-2
+
+type User={
+    readonly id:String,     //can't change id value as read-only
+    name:String,
+    email:String
+}
+
+let MyUser:User={
+    id:"1234",
+    name:"King",
+    email:"Mindset"
+}
+
+MyUser.name="Omkar"   //done
+
+MyUser.id="123";  //error: wrong
+
+
+
+
+//Array in TS
+
+const newArray: string[]=[];  //means gonna be string array
+
+newArray.push(5);     //error: not a string
+newArray.push("5");   // correct 
+
+
+
+//e.g.2
+
+const newArray: []=[];   //saying it should be empty array
+newArray.push("5");  //can't push anything
+
+
+
+
+//e.g: 3
+
+type User={
+    name:String,
+    email:String
+}
+const newArray: User[]=[];   //array of type:User
+
+newArray.push({name:"King", email:"mindset"});  //correct
+
+
+
+//Second: Method to define array
+
+const newArray: Array<number>=[];  //can store only numbers
+
+
+
+//Union Type in Ts
+
+let variable: String | number | boolean ;
+
+variable=55;   //All are allowed
+variable="55"
+variable=false;
+
+function hello(num:String|number|boolean){
+    if(typeof num==="string"){
+        num.toLocaleLowerCase();
+    }
+    if(typeof num==="number"){
+        num.toString();
+    }
+    if(typeof num=="boolean"){
+        num=false;
+    }
+}
+
 */
+
+const newArray: string[] | number[]=[1,3,4,5] //either of number or string not mixed
+const secondArray: string[] | number[]=["2","3","4"] //either of number or string not mixed
+
+const thirdArray: (string | number)[]=[1,2,"3"]; //can be numberr/string mixed
+
+
+
+
+// typeof "string", "number", "boolean"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
