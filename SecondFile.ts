@@ -28,3 +28,36 @@ enum King{
 
 */
 
+
+//interface
+
+interface User{
+    readonly id:number,
+    name:String,
+    middleName?:String,     //optional 
+    myFunction(Om:String):String,            //function that return string & take numberr
+    secondWay:()=>number
+}
+
+let variable:User;
+
+variable={
+    id:123,
+    name:"Om",
+    myFunction(Omk:"King"){
+        return "Om is King"
+    },
+    secondWay: ()=>{
+        return 23;
+    }
+}
+
+
+
+
+
+
+
+
+
+
