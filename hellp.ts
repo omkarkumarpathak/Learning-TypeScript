@@ -185,7 +185,7 @@ function hello(num:String|number|boolean){
     if(typeof num==="string"){
         num.toLocaleLowerCase();
     }
-    if(typeof num==="number"){
+    if(typeof num==="number"){    // typeof "string", "number", "boolean"
         num.toString();
     }
     if(typeof num=="boolean"){
@@ -193,7 +193,7 @@ function hello(num:String|number|boolean){
     }
 }
 
-*/
+
 
 const newArray: string[] | number[]=[1,3,4,5] //either of number or string not mixed
 const secondArray: string[] | number[]=["2","3","4"] //either of number or string not mixed
@@ -201,9 +201,29 @@ const secondArray: string[] | number[]=["2","3","4"] //either of number or strin
 const thirdArray: (string | number)[]=[1,2,"3"]; //can be numberr/string mixed
 
 
+*/
+
+//Tuple in TS
+
+let newArray:[String, number, boolean];   //order should be 
+
+newArray=["King",1,true];   //allowed
+//newArray=[1,"King",true];   //not allowed coz order is not same
+
+//e.g. 2
+
+type User=[string,boolean];
+
+const MyUser:User=["King",true];
+
+MyUser[0]="Om is King"   //allowed as it is mutable
 
 
-// typeof "string", "number", "boolean"
+
+
+
+
+
 
 
 
