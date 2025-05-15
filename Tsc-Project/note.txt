@@ -1,0 +1,19 @@
+Initialize typescript: tsc --init
+   --> It will create tsconfig.json 
+
+Initialize npm: npm init -y
+   --> Create package.json file 
+
+1) Now create files like index.html
+2) Create two folders 'src' & distributor as 'dist'
+3) Create index.tsc in src & index.js in dist.
+4) Now, I want when we run the index.tsc, it's js part should go in index.js
+which is under dist folder. For that we have to do minor change in tsconfig.json 
+
+5) In tsconfig.json: make (outdir:./dist/ ) means we'r saying where to put js part.
+
+6) Also don't compile index.tsc using 'tsc index.tsc', instead use command: 'tsc -w'
+
+7) tsc -w: is watch mode, it see tscconfig.json where to put js & any change in tsx file 
+will be shown in js file as well.
+

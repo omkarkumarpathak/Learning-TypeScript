@@ -52,8 +52,6 @@ hello("7");
 
 //Example 3: Default
 
-
-
 function hello(num1:String, num2:number, num3:boolean=false){
     return "Done";
 }
@@ -86,7 +84,7 @@ hello("King");
 
 //bad behavior: Don't take extra parameter of object
 
-//function accepting object & return object
+//function accepting object & return object type
 
 function hello({name:String, isPaid:boolean}):{}{
     return {};
@@ -96,7 +94,7 @@ hello({name:"King", isPaid:true, email:"hi@gmail.com"})
 
 //err: email doesn't exist in parameters.
 
-//Solved Bad behavior
+//Solved Bad behavior: this will work
 
 let obj={name:"King", isPaid:true, email:"hi@gmail.com"};
 
@@ -133,14 +131,14 @@ let MyUser:User={
 
 MyUser.name="Omkar"   //done
 
-MyUser.id="123";  //error: wrong
+MyUser.id="123";  //error: wrong, as immutable
 
 
 
 
 //Array in TS
 
-const newArray: string[]=[];  //means gonna be string array
+const newArray: string[]=[];  //means gonna be a string array
 
 newArray.push(5);     //error: not a string
 newArray.push("5");   // correct 
@@ -170,7 +168,7 @@ newArray.push({name:"King", email:"mindset"});  //correct
 //Second: Method to define array
 
 const newArray: Array<number>=[];  //can store only numbers
-
+newArray.push(5);
 
 
 //Union Type in Ts
@@ -201,7 +199,6 @@ const secondArray: string[] | number[]=["2","3","4"] //either of number or strin
 const thirdArray: (string | number)[]=[1,2,"3"]; //can be numberr/string mixed
 
 
-*/
 
 //Tuple in TS
 
@@ -219,6 +216,7 @@ const MyUser:User=["King",true];
 MyUser[0]="Om is King"   //allowed as it is mutable
 
 
+*/
 
 
 
