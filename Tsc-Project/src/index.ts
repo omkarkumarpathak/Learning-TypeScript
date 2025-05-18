@@ -18,7 +18,7 @@ class User{
 
 const object= new User("Om",23);
 
-*/
+
 
 //Note: Unlike js class, we've to pre-declare the variable 
 //and if declared, either define it in constructor or just give default
@@ -31,6 +31,8 @@ const object= new User("Om",23);
 
 
 class User{
+
+    protected protected_var:number=0;
 
     constructor(private email:string, public name:string){
         this.email=email,
@@ -53,8 +55,66 @@ class User{
     }
 }
 
+
 const om=new User("Om","King");
+
 
 const value:string=om.GetterBro;
 om.setterBro="hi";
 
+
+
+
+// Interface implementation
+//Interface creates like a structute, whose implementation must have
+
+//eg
+
+interface Story{
+    name:string,
+    email:string,
+    age:number
+}
+
+interface CreateBro{
+    createStory():void;
+}
+
+//Now, we we create class implementation, then they must have atleast these properties
+
+class User implements Story, CreateBro{
+    constructor(
+        public email:string,
+        public name:string,
+        public age:number,
+        public extra:string,
+    ){}
+
+    createStory(): void {
+        console.log("hi");
+    }
+}
+
+
+
+
+//Abstract: Has both structure + code
+
+abstract class User {
+    abstract name: string; // Declares that subclass must define this
+
+    coding(): void {
+        console.log("Method");
+    }
+}
+
+class SubUser extends User {
+    constructor(
+        public name: string,
+        public email: string
+    ) {
+        super(); // No arguments, since base class has no constructor
+    }
+}
+
+*/
