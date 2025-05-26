@@ -69,4 +69,41 @@ const genericFunction=<T,>(val:T[]):T=>{
     return val[0];
 }
 
+
+function generateBro<T,U extends number>(val:T, val2:U){
+    return "hi";
+}
+generateBro(1,2);  //U can only be number now
+
+
+//e.g. 2
+
+interface DB{
+    name:string,
+    age:number,
+}
+
+function generateBro2<T, U extends DB>(val1:T, val2:U){
+    return "hi";
+}
+generateBro2(1, {name:"Om", age:4});
+
+
+
+
+//In-operator
+
+interface User{
+    email:string,
+    name:string,
+    isAdmin:boolean
+}
+
+function isAdminAcc(acc:User):string{
+    if("isAdmin" in acc){
+        return acc.email
+    }
+    return "";
+}
+
 */
